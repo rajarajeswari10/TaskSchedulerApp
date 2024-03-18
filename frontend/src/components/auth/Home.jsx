@@ -5,19 +5,17 @@ import './../../styles/Home.css';
 const Home = () => {
     return (
         <div>
-            <header>
-                <h1>Your Service Name</h1>
-            </header>
-
-            <nav>
-                <a href="/">Home</a>
-                <a href="/">About</a>
-                <a href="/">Work</a>
-                <a href="/">Info</a>
-                <Link to="/login"><button>Get Started</button></Link> 
-            </nav>
-            
-           
+            <div className="nav-container">
+                <h1>Fixit</h1>
+                <nav>
+                    <a href="/">Home</a>
+                    <a href="/">About</a>
+                    <a href="/" className="move-right">Work</a>
+                    <a href="/" className="move-right">Info</a>
+                </nav>
+                <Link to="/Login"><button className="login-btn">Login</button></Link> 
+                <Link to="/Signup"><button className="signup-btn">Sign Up</button></Link> 
+            </div>
         </div>
     );
 }
