@@ -1,20 +1,26 @@
-.nav-container {
+.nav-container  {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
-    padding: 5px 20px;
+    padding: 20px 0px;
     border-bottom: 1px solid #ccc; 
-    margin-bottom: -5px; 
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    margin-bottom: 50px 0px;
+    background-color: #fff;
 }
 
-.nav-container nav {
-    margin-left: auto; 
-}
-
-.nav-container nav a {
+.nav-container  a {
     color: black;
     text-decoration: none;
     margin-right: 15px;
+}
+
+.nav-container  a.active {
+    color: #1980E5; /* Change the color of the active link */
+    font-weight: bold; /* Make the active link bold */
+    text-decoration: underline; /* Underline the active link */
 }
 
 .login-btn {
@@ -24,7 +30,7 @@
     padding: 10px 35px;
     border-radius: 10px;
     cursor: pointer;
-    margin-right: 15px; 
+    /* margin-right: 15px;  */
 }
 
 .login-btn:hover {
@@ -42,15 +48,20 @@
 
 .image-container {
     position: relative; 
-    text-align: center; 
-    margin-top: 20px;
+    text-align: center;
+   
+}
+
+#section{
+    padding: 20px 0px;
 }
 
 .background-image {
+    margin-top: 50px;
     max-width: 100%; 
     height: auto; 
     width: 900px; 
-    height: 450px;
+    height: 500px;
     border-radius: 10px;
 }
 
@@ -111,10 +122,13 @@
 
 .services-container {
     text-align: center; 
-    margin-top: 50px;
+    margin-top: 200px;
+    margin-bottom: 40px;
+    
 }
 
 .services-container h2 {
+    /* margin-top: 200; */
     font-size: 24px; 
     margin-bottom: 20px; 
 }
@@ -142,3 +156,10 @@
     font-size: 16px; 
     color: #666; 
 }
+
+.nav-container a.active {
+    color: red; /* Change this to your desired highlight color */
+    /* Add any other styles for the active link */
+}
+
+
