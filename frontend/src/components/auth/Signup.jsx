@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import React, { useState } from 'react';
+import FormInput from "./Forminput";
 //import axios from "axios";
 
 export default function Signup() {
@@ -54,12 +55,74 @@ const handleConfirmPasswordChange = (value) => {
       <div className="form">
         <div className="register">
         <form onSubmit={registration}>
-              <input type="email" id="email" placeholder="Enter Email" required value={email} onChange={(e) => handleEmailChange(e.target.value)} pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Enter valid email" /><br /><br />
-              <input type="text" id="firstname" placeholder="Enter First Name" required value={firstName} onChange={(e) =>  handleFirstnameChange(e.target.value)} pattern='^[A-za-z]+$' title="Enter only alphabets" /><br /><br />
-              <input type="text" id="lastname" placeholder="Enter Last Name" required value={lastName} onChange={(e) =>  handleLastnameChange(e.target.value)} pattern='^[A-za-z]+$' title="Enter only alphabets" /><br /><br />
-              <input type="text" id="mobileNumber" placeholder="Enter Mobilenumber" required value={mobileNumber} onChange={(e) => handleMobileChange(e.target.value)} pattern="^(?:(?:\+|0{0,2})91(\s*[\-]\s*)?|[0]?)?[6789]\d{9}$" title="Enter valid phone number"/><br /><br />
-              <input type="password" id="password" placeholder="Password" value={password} onChange={(e) => handlePasswordChange(e.target.value)} pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required /><br /><br />
-             <input type="password" id="confirmPassword" placeholder="Confirm Password" onChange={(e) => handleConfirmPasswordChange(e.target.value)} required /><br /><br />
+          <FormInput
+          type='email'
+          placeholder='Enter Email'
+          required
+          pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$'
+          title="Enter valid email"
+          id='email'
+          value={email}
+          onChange ={(e) => handleEmailChange(e.target.value)}
+          />
+          <br /> <br />
+          <FormInput
+          type='text'
+          placeholder='Enter First Name'
+          required
+          pattern='^[A-za-z]+$'
+          title="Enter only alphabets"
+          id='firstname'
+          onChange={(e) =>  handleFirstnameChange(e.target.value)}
+          value={firstName}
+          />
+          <br /> <br />
+
+          <FormInput
+          type='text'
+          placeholder='Enter Last Name'
+          required
+          pattern='^[A-za-z]+$'
+          title="Enter only alphabets"
+          id='lasttname'
+          onChange={(e) =>  handleFirstnameChange(e.target.value)}
+          value={lastName}
+          />
+          <br /> <br />
+
+          <FormInput
+          type='text'
+          placeholder='Enter Mobile Number'
+          required
+          pattern='^[A-za-z]+$'
+          title="Enter valid phone number"
+          id='mobileNumber'
+          onChange={(e) => handleMobileChange(e.target.value)}
+          value={mobileNumber}
+          />
+          <br /> <br />
+
+        
+
+          <FormInput
+          type='password'
+          placeholder='Password'
+          required
+          pattern='(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}'
+          title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters."
+          id='password'
+          onChange={(e) => handlePasswordChange(e.target.value)}
+          />
+          <br /> <br />
+
+          <FormInput
+          type='password'
+          placeholder='Confirm password'
+          required
+          id='confirmPassword'
+          onChange={(e) => handleConfirmPasswordChange(e.target.value)}
+          />
+          <br /> <br />
             <button type="submit" id="submitButton"> Register </button>
           </form>
         </div>
