@@ -1,49 +1,69 @@
 .login-page {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-  
-  .login-container {
-    width: 600px;
-    padding: 20px;
-    border-radius: 5px;
-    text-align: center;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
 
-  .login-container p {
-    margin-bottom: 20px;
-  }
-  
-  .login-container input {
-    width: 80%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  #loginButton {
-    background-color: #1980E5;
-    width:80%;
-    color: white;
-    border: none;
-    padding: 10px 35px;
-    border-radius: 10px;
-    cursor: pointer;
-  }
-  
-  #loginButton:hover {
-    background-color: #1257a8;
-  }
-  
-  .forgot-password {
-    margin-top: 20px;
-  }
-  
-  .not_a p {
-    margin-top: 20px;
-  }
-  
-  
+.login-container {
+  width: 600px;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.login-container p {
+  margin-bottom: 20px;
+}
+
+.login-container label {
+  text-align: left;
+  display: block;
+  padding-left: 60px;
+}
+
+.login-container input {
+  width: 80%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#loginButton {
+  background-color: #1980E5;
+  width: 80%;
+  color: white;
+  border: none;
+  padding: 10px 35px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+#loginButton:hover {
+  background-color: #1257a8;
+}
+
+.forgot-password {
+  margin-top: 20px;
+}
+
+.not_a p {
+  margin-top: 20px;
+}
+
+.eye-icon {
+  color: black !important;
+}
+
+.password-input{
+  position: relative;
+}
+
+.eye-icon {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
