@@ -1,6 +1,7 @@
 import { useNavigate, Link } from "react-router-dom";
 import React, { useState } from 'react';
 import axios from 'axios';
+import './../../styles/Login.css';
 
 export default function Login() {
   const navigate = useNavigate();
@@ -75,27 +76,28 @@ const forgotPassword = async () => {
   };
 
   return (
-    <div className="container">
-            <div className="header">
-              <h2 id="main_title">Scheduler App</h2><br />
-            </div>
-            <div className="form">
-              <div className="login">
-                <form onSubmit={login}>
-                  <input type="text" id="email" placeholder="Enter email" required className="email" onChange={(e) => handleEmailChange(e.target.value)}/>
-                  <br/><br/>
-                  <input type="password" id="password" placeholder="Enter Password" required onChange={(e) => handlePasswordChange(e.target.value)} /><br /><br />
-                  <button type="submit" id="loginButton">Login</button>
-                </form>
-                <div className="forgot-password">
-                    <Link to="#" className="forgot-password-link" onClick={forgotPassword}>Forgot Password?</Link>
-                </div>
-            </div>
-              <br />
-              <div className="not_a">
-                <p>New User? &nbsp;<Link to="/Signup" id="signupLink">Sign Up</Link></p>
-              </div>
-            </div>
+    <div className="login-page">
+      <div className="login-container">
+        <h3>Welcome to Fixit Home Care Services!</h3>
+        <p>Log in to manage your services. Need help?<br/>Contact us at support@fixit.com</p>
+        <div className="login">
+          <form onSubmit={login}>
+            <label>Enter Email</label><br/>
+            <input type="text" id="email" placeholder="Enter email" required className="email" onChange={(e) => handleEmailChange(e.target.value)}/>
+            <br/><br/>
+            <label>Password</label><br/>
+            <input type="password" id="password" placeholder="Enter password" required onChange={(e) => handlePasswordChange(e.target.value)} /><br /><br />
+            <button type="submit" id="loginButton">Login</button>
+          </form>
+          <div className="forgot-password">
+            <Link to="#" className="forgot-password-link" onClick={forgotPassword}>Forgot Password?</Link>
+          </div>
+        </div>
+        <br />
+        <div className="not_a">
+          <p>New User? &nbsp;<Link to="/Signup" id="signupLink">Sign Up</Link></p>
+        </div>
+      </div>
     </div>
   );
 }

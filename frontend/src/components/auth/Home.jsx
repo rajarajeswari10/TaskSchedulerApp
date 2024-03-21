@@ -31,7 +31,7 @@ export default function Home() {
     return (
         <div>
             <div className='nav-container'>
-                <h1>Fixit</h1>
+                <h1 className='brand'>Fixit</h1>
                 <nav>
                     <a href="#section1" className={activeSection === 'section1' ? 'active' : ''}>Home</a>
                     <a href="#section2" className={activeSection === 'section2' ? 'active' : ''}>Services</a>
