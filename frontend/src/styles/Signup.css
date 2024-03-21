@@ -7,7 +7,7 @@
   
 .signup-container {
     width: 700px;
-    padding: 20px;
+    padding: 50px;
     border-radius: 5px;
     text-align: center;
 }
@@ -17,13 +17,14 @@
 }
 
 .signup-container h3 {
-    margin-top: 50px;
+    margin-top: 300px;
 }
 
 .signup-container label {
     text-align: left;
     display: block;
     padding-left: 60px;
+    margin-bottom: 10px;
 }
   
 .signup-container input {
@@ -32,6 +33,8 @@
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    opacity: 0.5;
+    font-size: 14px;
 }
   
 #signupButton {
@@ -50,6 +53,8 @@
   
 .not_a p {
     margin-top: 20px;
+    font-weight: 600;
+    font-size: 18px;
 }
 
 .eye-icon {

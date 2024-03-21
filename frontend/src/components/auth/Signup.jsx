@@ -63,6 +63,7 @@ return (
       <div className="login">
         <form onSubmit={registration}>
 
+          <label htmlFor="email">Enter Email</label>
           <FormInput
           type='email'
           placeholder='Enter Email'
@@ -75,6 +76,7 @@ return (
           />
           <br /> <br />
 
+          <label htmlFor="firstname">Enter First Name</label>
           <FormInput
           type='text'
           placeholder='Enter First Name'
@@ -87,6 +89,7 @@ return (
           />
           <br /> <br />
 
+          <label htmlFor="lastname">Enter Last Name</label>
           <FormInput
           type='text'
           placeholder='Enter Last Name'
@@ -99,6 +102,7 @@ return (
           />
           <br /> <br />
 
+          <label htmlFor="mobileNumber">Enter Mobile Number</label>
           <FormInput
           type='text'
           placeholder='Enter Mobile Number'
@@ -111,6 +115,7 @@ return (
           />
           <br /> <br />
 
+          <label htmlFor="password">Enter Password</label>
           <div className="password-input">
               <FormInput
                 type={showPassword ? 'text' : 'password'}
@@ -125,6 +130,8 @@ return (
               <i className={`bi ${showPassword ? 'bi-eye-slash' : 'bi-eye'} eye-icon`} onClick={toggleShowPassword}></i>
             </div>
           <br /> 
+
+          <label htmlFor="confirmPassword">Confirm Password</label>
           <div className="confirm-password-input">
               <FormInput
                 type={showConfirmPassword ? 'text' : 'password'}

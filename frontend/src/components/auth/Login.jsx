@@ -41,7 +41,7 @@ export default function Login() {
           <h3>Welcome to Fixit Home Care Services!</h3>
           <p>Log in to manage your services. Need help?<br/>Contact us at support@fixit.com</p>
           <form onSubmit={login}>
-            <label htmlFor="email">Enter Email</label><br/>
+            <label htmlFor="email">Enter Email</label>
             <FormInput
               type='email'
               placeholder='Enter Email'
@@ -54,7 +54,7 @@ export default function Login() {
             />
             <br /> <br />
             
-            <label htmlFor="password">Enter Password</label><br/>
+            <label htmlFor="password">Enter Password</label>
             <div className="password-input">
               <FormInput
                 type={showPassword ? 'text' : 'password'}
