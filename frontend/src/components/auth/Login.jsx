@@ -1,11 +1,13 @@
-import { useNavigate, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import React, { useState } from 'react';
-import axios from 'axios';
+import './../../styles/Login.css';
+import FormInput from "./Forminput";
+import hvacicon from './hvac.jpg';
 
 export default function Login() {
-  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleEmailChange = (value) => {
     setEmail(value);
@@ -15,87 +17,69 @@ export default function Login() {
     setPassword(value);  
   };
 
+  const toggleShowPassword = () => {
+    setShowPassword(!showPassword);
+  };
+
   const login = async (e) => {
     e.preventDefault();
 
-    const data = {
-      email: email,
-      password: password
-    };
+    // Login logic here
+  };
 
-    const url1 = '';
-    const url2 = '';
-    const url3 = '';
-
-    try {
-        const customerLoginResult = await axios.post(url1, data);
-        console.log(customerLoginResult);
-      
-        if (customerLoginResult.data === true) {
-          // Set session storage or any other necessary logic for user login
-          alert('User Logged in Successfully');
-          navigate('/user/Dashboard');
-        } else {
-          const technicianLoginResult = await axios.post(url2, data);
-      
-          if (technicianLoginResult.data === true) {
-            // Set session storage or any other necessary logic for technician login
-            alert("Technician Logged in Successfully");
-            navigate('/technician/Dashboard');
-          } else {
-            const supervisorLoginResult = await axios.post(url3, data);
-      
-            if (supervisorLoginResult.data === true) {
-              // Set session storage or any other necessary logic for admin login
-              alert("Supervisor Logged in Successfully");
-              navigate('/supervisor/Dashboard');
-            } else {
-              alert('Invalid credentials. Please try again!');
-            }
-          }
-        }
-      } catch (error) {
-        console.log(error);
-        alert('An error occurred. Try again later!');
-      }
-};
-
-const forgotPassword = async () => {
-    try {
-      const response = await axios.post("", { email });
-      if (response.data.success) {
-        alert("Password reset email sent. Check your email for instructions.");
-      } else {
-        alert("Email not found. Please check your email and try again.");
-      }
-    } catch (error) {
-      console.error(error);
-      alert("An error occurred. Please try again later.");
-    }
+  const forgotPassword = async () => {
+    // Forgot password logic here
   };
 
   return (
-    <div className="container">
-            <div className="header">
-              <h2 id="main_title">Scheduler App</h2><br />
+    <div className="login-page">
+      <div className="login-container">
+        <div className="logo-container">
+          <img src={hvacicon} alt="Logo" className="logo" />
+        </div>
+        <div className="login-form">
+          <h3>Welcome to Fixit Home Care Services!</h3>
+          <p>Log in to manage your services. Need help?<br/>Contact us at support@fixit.com</p>
+          <form onSubmit={login}>
+            <label htmlFor="email">Enter Email</label><br/>
+            <FormInput
+              type='email'
+              placeholder='Enter Email'
+              required
+              pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$'
+              title="Enter valid email"
+              id='email'
+              value={email}
+              onChange ={(e) => handleEmailChange(e.target.value)}
+            />
+            <br /> <br />
+            
+            <label htmlFor="password">Enter Password</label><br/>
+            <div className="password-input">
+              <FormInput
+                type={showPassword ? 'text' : 'password'}
+                placeholder='Enter Password'
+                required
+                pattern='?=.\d)(?=.[a-z])(?=.*[A-Z]).{8,}'
+                title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+                id='password'
+                onChange={(e) =>  handlePasswordChange(e.target.value)}
+                value={password}
+              />
+              <i className={`bi ${showPassword ? 'bi-eye-slash' : 'bi-eye'} eye-icon`} onClick={toggleShowPassword}></i>
             </div>
-            <div className="form">
-              <div className="login">
-                <form onSubmit={login}>
-                  <input type="text" id="email" placeholder="Enter email" required className="email" onChange={(e) => handleEmailChange(e.target.value)}/>
-                  <br/><br/>
-                  <input type="password" id="password" placeholder="Enter Password" required onChange={(e) => handlePasswordChange(e.target.value)} /><br /><br />
-                  <button type="submit" id="loginButton">Login</button>
-                </form>
-                <div className="forgot-password">
-                    <Link to="#" className="forgot-password-link" onClick={forgotPassword}>Forgot Password?</Link>
-                </div>
-            </div>
-              <br />
-              <div className="not_a">
-                <p>New User? &nbsp;<Link to="/Signup" id="signupLink">Sign Up</Link></p>
-              </div>
-            </div>
+            <br /> <br />
+
+            <button type="submit" id="loginButton">Login</button>
+          </form>
+          <div className="forgot-password">
+            <Link to="#" className="forgot-password-link" onClick={forgotPassword}>Forgot Password?</Link>
+          </div>
+        </div>
+        <div className="not_a">
+          <p>Are you new? &nbsp;<Link to="/Signup" id="signupLink">Create an account</Link></p>
+        </div>
+      </div>
     </div>
   );
 }

@@ -11,7 +11,9 @@ const FormInput = ({ type, name, placeholder, required, pattern, title, id }) =>
     <input
       type={type}
       name={name}
-      id={id} // Use the id prop here
+
+      id={id} 
+
       placeholder={placeholder}
       required={required}
       value={value}
@@ -23,3 +25,4 @@ const FormInput = ({ type, name, placeholder, required, pattern, title, id }) =>
 };
 
 export default FormInput;
+
