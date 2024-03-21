@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
 import React, { useState } from 'react';
 import FormInput from "./Forminput";
+
 import './../../styles/Signup.css';
+
 
 export default function Signup() {
     const [email, setEmail] = useState('');
@@ -96,8 +98,10 @@ return (
           required
           pattern='^[A-za-z]+$'
           title="Enter only alphabets"
+
           id='lastname'
           onChange={(e) =>  handleLastnameChange(e.target.value)}
+
           value={lastName}
           />
           <br /> <br />
@@ -114,6 +118,7 @@ return (
           value={mobileNumber}
           />
           <br /> <br />
+
 
           <label htmlFor="password">Enter Password</label>
           <div className="password-input">
@@ -150,6 +155,36 @@ return (
       <br />
       <div className="not_a">
         <p>Already have an account? &nbsp;<Link to="/Login" id="loginLink">Login</Link></p>
+
+          <FormInput
+          type='password'
+          placeholder='Password'
+          required
+          pattern='(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}'
+          title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters."
+          id='password'
+          onChange={(e) => handlePasswordChange(e.target.value)}
+          />
+          <br /> <br />
+
+          <FormInput
+          type='password'
+          placeholder='Confirm password'
+          required
+          id='confirmPassword'
+          onChange={(e) => handleConfirmPasswordChange(e.target.value)}
+          />
+          <br /> <br />
+            <button type="submit" id="submitButton"> Register </button>
+          </form>
+        </div>
+        <br />
+        <div className="not_a">
+          <p>
+            Already a user? &nbsp;
+            <Link id="signinLink" to="/">Login</Link>
+          </p>
+        </div>
       </div>
     </div>
   </div>
