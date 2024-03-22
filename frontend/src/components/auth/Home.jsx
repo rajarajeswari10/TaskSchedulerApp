@@ -102,7 +102,7 @@ export default function Home() {
                     Contact us for a free consultation and quote.
                 </p>
                 <div className="contact-us-btn">
-                <Link to="/Login"><button className="login-btn">Book Now</button></Link>
+                    <Link to="/Login"><button className="login-btn">Book Now</button></Link>
                     <Link to="/Signup"><button className="signup-btn">Contact Us</button></Link>
                 </div>
             </div>
