@@ -76,7 +76,7 @@ export default function Home() {
                 <div className="whyus">
                 <h3>Our Services</h3>
                 <div className="card-container">
-                <Card icon={hvacicon} title = "HVAC Repair" content="Experienced in AC, heater, and ventilation system repairs."/>
+                    <Card icon={hvacicon} title = "HVAC Repair" content="Experienced in AC, heater, and ventilation system repairs."/>
                    <Card icon={hvacicon} title = "Electrical Services" content="Trusted electiricians for wiring, outlet, and fixture installations."/>,
                    <Card icon={hvacicon} title = "Plumbing Solutions" content="Professional plumbers for leak, clog and pipe repairs."/>  
                 </div>
