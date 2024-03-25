@@ -1,9 +1,7 @@
 import { Link } from "react-router-dom";
 import React, { useState } from 'react';
 import FormInput from "./Forminput";
-
 import './../../styles/Signup.css';
-
 
 export default function Signup() {
     const [email, setEmail] = useState('');
@@ -64,8 +62,7 @@ return (
       <p>Sign Up to avail our services</p>
       <div className="login">
         <form onSubmit={registration}>
-
-          <FormInput
+        <FormInput
           type='email'
           placeholder='Enter Email'
           required
@@ -75,9 +72,9 @@ return (
           value={email}
           onChange ={(e) => handleEmailChange(e.target.value)}
           />
-          <br /> <br />
-
-          <FormInput
+         <br />
+        
+         <FormInput
           type='text'
           placeholder='Enter First Name'
           required
@@ -87,21 +84,18 @@ return (
           onChange={(e) =>  handleFirstnameChange(e.target.value)}
           value={firstName}
           />
-          <br /> <br />
 
-          <FormInput
+         <FormInput
           type='text'
           placeholder='Enter Last Name'
           required
           pattern='^[A-za-z]+$'
           title="Enter only alphabets"
-
           id='lastname'
           onChange={(e) =>  handleLastnameChange(e.target.value)}
-
           value={lastName}
           />
-          <br /> <br />
+
 
           <FormInput
           type='text'
@@ -113,10 +107,9 @@ return (
           onChange={(e) => handleMobileChange(e.target.value)}
           value={mobileNumber}
           />
-          <br /> <br />
 
 
-          <div className="password-input">
+           <div className="password-input">
               <FormInput
                 type={showPassword ? 'text' : 'password'}
                 placeholder='Enter Password'
@@ -129,8 +122,8 @@ return (
               />
               <i className={`bi ${showPassword ? 'bi-eye-slash' : 'bi-eye'} eye-icon`} onClick={toggleShowPassword}></i>
             </div>
-          <br /> 
-          <div className="confirm-password-input">
+            
+            <div className="confirm-password-input">
               <FormInput
                 type={showConfirmPassword ? 'text' : 'password'}
                 placeholder='Confirm Password'
@@ -140,7 +133,6 @@ return (
               />
               <i className={`bi ${showConfirmPassword ? 'bi-eye-slash' : 'bi-eye'} eye-icon`} onClick={toggleShowConfirmPassword}></i>
             </div>
-          <br /><br />
 
           <button type="submit" id="signupButton">Sign Up</button>
         </form>
@@ -160,24 +152,10 @@ return (
           />
           <br /> <br />
 
-          <FormInput
-          type='password'
-          placeholder='Confirm password'
-          required
-          id='confirmPassword'
-          onChange={(e) => handleConfirmPasswordChange(e.target.value)}
-          />
-          <br /> <br />
-            <button type="submit" id="submitButton"> Register </button>
-          </form>
-        </div>
-        <br />
-        <div className="not_a">
-          <p>
-            Already a user? &nbsp;
-            <Link id="signinLink" to="/">Login</Link>
-          </p>
-        </div>
+            <div className="not_a">
+              <p>Already have an account? &nbsp;<Link to="/Login" id="loginLink">Login</Link></p>
+            </div>
+        </form>
       </div>
     </div>
   </div>
