@@ -134,23 +134,7 @@ return (
               <i className={`bi ${showConfirmPassword ? 'bi-eye-slash' : 'bi-eye'} eye-icon`} onClick={toggleShowConfirmPassword}></i>
             </div>
 
-          <button type="submit" id="signupButton">Sign Up</button>
-        </form>
-      </div>
-      <br />
-      <div className="not_a">
-        <p>Already have an account? &nbsp;<Link to="/Login" id="loginLink">Login</Link></p>
-
-          <FormInput
-          type='password'
-          placeholder='Password'
-          required
-          pattern='(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}'
-          title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters."
-          id='password'
-          onChange={(e) => handlePasswordChange(e.target.value)}
-          />
-          <br /> <br />
+            <button type="submit" id="signupButton">Sign Up</button>
 
             <div className="not_a">
               <p>Already have an account? &nbsp;<Link to="/Login" id="loginLink">Login</Link></p>
