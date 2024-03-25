@@ -42,15 +42,21 @@ const CustomerDashboard = () => {
       </nav>
       <div className="dashboard-content">
         {activeItem === 1 && (
-          <div>
-            <h3>Welcome back, John</h3>
-          </div>
+           <div className="requests-section">
+            <h3 className="requests-heading">Requests</h3>
+            <Link to="/NewRequest"><button className="newrequest-btn">New Request</button></Link><br/><br/>
+            <div className="request-search-container">
+              <i className="bi bi-search"></i>
+              <input type="text" placeholder="Search submitted requests by title" className="request-search-box" />
+              <button className="request-search-btn">Search</button>
+            </div>
+         </div>
         )}
         {activeItem === 2 && (
-          <div className="requests-section">
-            <h3 className="requests-heading">Requests</h3>
-            <Link to="/NewRequest"><button className="newrequest-btn">New Request</button></Link>
-          </div>
+         <div>
+         <h3>Profile Section2</h3>
+         <p>This is the content for the Profile section.</p>
+       </div>
         )}
         {activeItem === 3 && (
           <div>

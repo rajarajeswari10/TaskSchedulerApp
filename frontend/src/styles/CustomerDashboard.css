@@ -45,15 +45,43 @@ h2{
     top: 40px;
     right: 20px;
     margin-right: 40px;
+    margin-top: 10px;
+    align-self: flex-end;
 }
 
 .requests-section {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
+    flex-direction: column;
 }
-  
-.requests-heading {
-    margin-right: 10px;
+
+.request-search-container {
+    position: relative;
+    margin-top: 10px;
 }
-  
-  
+
+.request-search-box {
+    padding-left: 40px; 
+    width: 700px; 
+    height: 50px;
+    border-radius: 5px; 
+    border: 1px solid #ccc; 
+}
+
+.request-search-btn {
+    position: absolute;
+    top: 50%;
+    right: 8px;
+    transform: translateY(-50%);
+    background-color: #1980E5;
+    color: white;
+    border: none;
+    padding: 8px 12px; 
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100px;
+}
+
+.request-search-btn:hover {
+    background-color: #0d5cb6;
+}
